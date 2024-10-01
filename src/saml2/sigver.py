@@ -916,6 +916,7 @@ class CryptoBackendXmlSec1(CryptoBackend):
         """
         with NamedTemporaryFile(suffix='.xml') as ntf:
             com_list.extend(['--output', ntf.name])
+            com_list.extend(['--lax-key-search'])
             com_list += extra_args
 
             logger.debug('xmlsec command: %s', ' '.join(com_list))
